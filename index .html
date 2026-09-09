@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Electrical Calculator</title>
+
+  <!-- Connect CSS file -->
+
+  <link rel="stylesheet" href="style .css">
+</head>
+
+<body>
+
+  <!-- Header -->
+
+  <header>
+    <div class="header-content">
+      <div class="logo">⚡ Electrical Calculator</div>
+
+```
+  <nav>
+    <a href="#ohm">Ohm's Law</a>
+    <a href="#power">Power</a>
+    <a href="#resistors">Resistors</a>
+    <a href="#divider">Voltage Divider</a>
+    <a href="#colors">Resistor Colors</a>
+    <a href="#ac">AC Calculations</a>
+  </nav>
+</div>
+```
+
+  </header>
+
+  <!-- Hero -->
+
+  <main>
+
+```
+<section class="hero">
+  <div class="hero-text">
+    <span class="badge">⚡ ELECTRICAL ENGINEERING</span>
+
+    <h1>Electrical Calculator</h1>
+
+    <p>
+      Explore electrical formulas and calculate electrical values
+      quickly and accurately.
+    </p>
+
+    <a href="#ohm" class="hero-button">
+      Start Calculating →
+    </a>
+  </div>
+
+  <div class="hero-image-container">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/5/57/Electrical-symbols.png"
+      alt="Electrical Symbols"
+      class="hero-img"
+    >
+  </div>
+</section>
+
+
+<!-- Ohm's Law -->
+<section id="ohm" class="card">
+
+  <div class="card-header">
+    <div class="icon">Ω</div>
+    <div>
+      <h2>Ohm's Law</h2>
+      <p>Calculate voltage using current and resistance.</p>
+    </div>
+  </div>
+
+  <div class="formula">V = I × R</div>
+
+  <div class="inputs">
+    <input
+      type="number"
+      id="current"
+      placeholder="Current (I) in Amperes"
+      step="any"
+    >
+
+    <input
+      type="number"
+      id="resistance"
+      placeholder="Resistance (R) in Ohms"
+      step="any"
+    >
+  </div>
+
+  <button onclick="calculateOhm()">
+    Calculate Voltage
+  </button>
+
+  <p id="ohmResult" class="result"></p>
+</section>
+
+
+<!-- Power -->
+<section id="power" class="card">
+
+  <div class="card-header">
+    <div class="icon">⚡</div>
+    <div>
+      <h2>Electrical Power</h2>
+      <p>Calculate electrical power from voltage and current.</p>
+    </div>
+  </div>
+
+  <div class="formula">P = V × I</div>
+
+  <div class="inputs">
+    <input
+      type="number"
+      id="voltageP"
+      placeholder="Voltage (V)"
+      step="any"
+    >
+
+    <input
+      type="number"
+      id="currentP"
+      placeholder="Current (I)"
+      step="any"
+    >
+  </div>
+
+  <button onclick="calculatePower()">
+    Calculate Power
+  </button>
+
+  <p id="powerResult" class="result"></p>
+</section>
+
+
+<!-- Resistors -->
+<section id="resistors" class="card">
+
+  <div class="card-header">
+    <div class="icon">R</div>
+    <div>
+      <h2>Resistors</h2>
+      <p>Calculate equivalent resistance in series and parallel.</p>
+    </div>
+  </div>
+
+  <div class="sub-card">
+    <h3>Series Resistors</h3>
+
+    <div class="formula">Rₑq = R₁ + R₂</div>
+
+    <div class="inputs">
+      <input
+        type="number"
+        id="r1Series"
+        placeholder="R1 (Ω)"
+        step="any"
+      >
+
+      <input
+        type="number"
+        id="r2Series"
+        placeholder="R2 (Ω)"
+        step="any"
+      >
+    </div>
+
+    <button onclick="calculateSeries()">
+      Calculate Series
+    </button>
+
+    <p id="seriesResult" class="result"></p>
+  </div>
+
+
+  <div class="sub-card">
+    <h3>Parallel Resistors</h3>
+
+    <div class="formula">Rₑq = (R₁ × R₂) / (R₁ + R₂)</div>
+
+    <div class="inputs">
+      <input
+        type="number"
+        id="r1Parallel"
+        placeholder="R1 (Ω)"
+        step="any"
+      >
+
+      <input
+        type="number"
+        id="r2Parallel"
+        placeholder="R2 (Ω)"
+        step="any"
+      >
+    </div>
+
+    <button onclick="calculateParallel()">
+      Calculate Parallel
+    </button>
+
+    <p id="parallelResult" class="result"></p>
+  </div>
+
+</section>
+
+
+<!-- Voltage Divider -->
+<section id="divider" class="card">
+
+  <div class="card-header">
+    <div class="icon">V</div>
+    <div>
+      <h2>Voltage Divider</h2>
+      <p>Calculate output voltage using two resistors.</p>
+    </div>
+  </div>
+
+  <div class="formula">
+    Vout = Vin × R₂ / (R₁ + R₂)
+  </div>
+
+  <div class="inputs three">
+    <input
+      type="number"
+      id="vin"
+      placeholder="Vin (V)"
+      step="any"
+    >
+
+    <input
+      type="number"
+      id="r1VD"
+      placeholder="R1 (Ω)"
+      step="any"
+    >
+
+    <input
+      type="number"
+      id="r2VD"
+      placeholder="R2 (Ω)"
+      step="any"
+    >
+  </div>
+
+  <button onclick="calculateVD()">
+    Calculate Vout
+  </button>
+
+  <p id="vdResult" class="result"></p>
+</section>
+
+
+<!-- Resistor Color Code -->
+<section id="colors" class="card">
+
+  <div class="card-header">
+    <div class="icon">🎨</div>
+    <div>
+      <h2>Resistor Color Code</h2>
+      <p>Calculate resistance from resistor color bands.</p>
+    </div>
+  </div>
+
+  <div class="color-grid">
+
+    <div>
+      <label for="band1">Band 1</label>
+      <select id="band1">
+        <option value="1">Brown</option>
+        <option value="2">Red</option>
+        <option value="3">Orange</option>
+        <option value="4">Yellow</option>
+        <option value="5">Green</option>
+        <option value="6">Blue</option>
+        <option value="7">Violet</option>
+        <option value="8">Gray</option>
+        <option value="9">White</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="band2">Band 2</label>
+      <select id="band2">
+        <option value="0">Black</option>
+        <option value="1">Brown</option>
+        <option value="2">Red</option>
+        <option value="3">Orange</option>
+        <option value="4">Yellow</option>
+        <option value="5">Green</option>
+        <option value="6">Blue</option>
+        <option value="7">Violet</option>
+        <option value="8">Gray</option>
+        <option value="9">White</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="multiplier">Multiplier</label>
+      <select id="multiplier">
+        <option value="1">×1 (Black)</option>
+        <option value="10">×10 (Brown)</option>
+        <option value="100">×100 (Red)</option>
+        <option value="1000">×1k (Orange)</option>
+        <option value="10000">×10k (Yellow)</option>
+        <option value="100000">×100k (Green)</option>
+        <option value="1000000">×1M (Blue)</option>
+      </select>
+    </div>
+
+  </div>
+
+  <button onclick="calculateResistorColor()">
+    Calculate Resistance
+  </button>
+
+  <p id="colorResult" class="result"></p>
+</section>
+
+
+<!-- AC Calculations -->
+<section id="ac" class="card">
+
+  <div class="card-header">
+    <div class="icon">〰</div>
+    <div>
+      <h2>AC Calculations</h2>
+      <p>Calculate real power in an AC circuit.</p>
+    </div>
+  </div>
+
+  <div class="formula">P = V × I × PF</div>
+
+  <div class="inputs">
+    <input
+      type="number"
+      id="voltageAC"
+      placeholder="Voltage RMS (V)"
+      step="any"
+    >
+
+    <input
+      type="number"
+      id="currentAC"
+      placeholder="Current RMS (A)"
+      step="any"
+    >
+
+    <input
+      type="number"
+      id="pf"
+      placeholder="Power Factor (0–1)"
+      step="any"
+      min="0"
+      max="1"
+    >
+  </div>
+
+  <button onclick="calculateAC()">
+    Calculate Real Power
+  </button>
+
+  <p id="acResult" class="result"></p>
+</section>
+```
+
+  </main>
+
+  <!-- Footer -->
+
+  <footer>
+    <p>⚡ Electrical Calculator</p>
+    <span>Learn • Calculate • Understand</span>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
